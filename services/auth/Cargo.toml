@@ -4,3 +4,11 @@ version = "0.1.0"
 edition = "2021"
 
 [dependencies]
+actix-web = "4"
+tokio = { version = "1", features = ["full"] }
+serde = { version = "1", features = ["derive"] }
+jsonwebtoken = "9.3.0"
+argon2 = "0.5.2"
+sqlx = { version = "0.8.2", features = ["runtime-tokio-native-tls", "postgres"] }
+dotenv = "0.15"
+rand_core = "0.9.2"

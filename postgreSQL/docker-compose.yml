@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:16  # Sử dụng PostgreSQL phiên bản 16
+    container_name: my_postgres
+    restart: always
+    environment:
+      POSTGRES_USER: root        # Tên user
+      POSTGRES_PASSWORD: root # Mật khẩu
+      POSTGRES_DB: chat_database     # Tên database mặc định
+    ports:
+      - "5432:5432"  # Map cổng PostgreSQL ra ngoài
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - my_network
+
+volumes:
+  postgres_data:
+
+networks:
+  my_network:
